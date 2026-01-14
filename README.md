@@ -5,29 +5,29 @@ The objective of this project is to understand how a real instruction set archit
 The design prioritizes correctness and architectural clarity over performance optimizations such as pipelining.
 
 # Instruction Support (RV32I)
-Arithmetic and Logical (Register)
- -ADD, SUB
- -AND, OR, XOR
- -SLL, SRL, SRA
+Arithmetic and Logical (Register):
+ ADD, SUB
+ AND, OR, XOR
+ SLL, SRL, SRA
 
-Arithmetic and Logical (Immediate)
- -ADDI
- -ANDI, ORI, XORI
- -SLTI, SLTIU
+Arithmetic and Logical (Immediate):
+ ADDI
+ ANDI, ORI, XORI
+ SLTI, SLTIU
 
-Memory Access
- -LW (Load Word)
- -SW (Store Word)
+Memory Access:
+ LW (Load Word)
+ SW (Store Word)
 
-Control Flow
- -BEQ, BNE
- -BLT, BGE (signed)
- -BLTU, BGEU (unsigned)
- -JAL (Jump and Link)
- -JALR (Jump and Link Register)
+Control Flow:
+ BEQ, BNE
+ BLT, BGE (signed)
+ BLTU, BGEU (unsigned)
+ JAL (Jump and Link)
+ JALR (Jump and Link Register)
 
-Upper Immediate Instructions
- -LUI (Load Upper Immediate)
- -AUIPC (Add Upper Immediate to PC)
+Upper Immediate Instructions:
+ LUI (Load Upper Immediate)
+ AUIPC (Add Upper Immediate to PC)
 
 All listed instructions follow the RV32I specification and execute in a single clock cycle.
