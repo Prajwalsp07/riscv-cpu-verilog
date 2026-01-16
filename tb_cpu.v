@@ -34,10 +34,10 @@ module tb_cpu_top;
         .reg_write_out(reg_write_out)
     );
 
-    // ----------------------------
+    
     // Internal signal visibility
     // (Datapath + Control)
-    // ----------------------------
+   
     wire [31:0] pc_next     = dut.pc_next;
 
     wire [31:0] rd1         = dut.rd1;
@@ -50,9 +50,9 @@ module tb_cpu_top;
     wire [6:0]  opcode      = dut.opcode;
     wire [2:0]  funct3      = dut.funct3;
 
-    // ----------------------------
+    
     // Clock generation
-    // ----------------------------
+    
     always #5 clk = ~clk;   // 10 ns period
 
     
