@@ -13,9 +13,9 @@ module cpu_top(
     output wire        reg_write_out
 );
 
-    // =====================================================
+    
     // 1. SIGNAL DECLARATIONS
-    // =====================================================
+   
 
     // PC
     wire [31:0] pc;
@@ -72,9 +72,9 @@ module cpu_top(
     wire mem_write;
     reg mem_write_r;
     
-    // =====================================================
+   
     // 2. MODULE INSTANTIATIONS
-    // =====================================================
+    
 
     // PC
     pc PC0 (
@@ -111,9 +111,9 @@ module cpu_top(
         .read_data(mem_read_data)
     );
 
-    // =====================================================
+    
     // 3. CONTROL / DECODE LOGIC
-    // =====================================================
+   
 
     always @(*) begin
         // ---------- defaults ----------
@@ -252,18 +252,17 @@ module cpu_top(
         endcase
     end
 
-    // =====================================================
+   
     // 4. WRITEBACK / FIXED ASSIGNS
-    // =====================================================
-
+    
     assign write_data = mem_to_reg ? mem_read_data : alu_out_r;
     assign reg_write  = reg_write_r;
     assign mem_write = mem_write_r;
 
 
-    // =====================================================
+    
     // 5. DEBUG OUTPUTS
-    // =====================================================
+   
 
     assign x1 = RF.regs[1];
     assign x2 = RF.regs[2];
