@@ -2,15 +2,15 @@
 
 module tb_cpu_top;
 
-    // ----------------------------
+    
     // Inputs
-    // ----------------------------
+    
     reg clk;
     reg reset;
 
-    // ----------------------------
+ 
     // Outputs from CPU (ports)
-    // ----------------------------
+  
     wire [31:0] x1;
     wire [31:0] x2;
     wire [31:0] x3;
@@ -19,9 +19,9 @@ module tb_cpu_top;
     wire [31:0] alu_out;
     wire        reg_write_out;
 
-    // ----------------------------
+  
     // Instantiate DUT
-    // ----------------------------
+   
     cpu_top dut (
         .clk(clk),
         .reset(reset),
@@ -55,9 +55,9 @@ module tb_cpu_top;
     // ----------------------------
     always #5 clk = ~clk;   // 10 ns period
 
-    // ----------------------------
+    
     // Test sequence
-    // ----------------------------
+   
     initial begin
         clk   = 1'b0;
         reset = 1'b1;
@@ -72,9 +72,9 @@ module tb_cpu_top;
         $finish;
     end
 
-    // ----------------------------
+  
     // Waveform dump (for non-Vivado simulators)
-    // ----------------------------
+
     initial begin
         $dumpfile("rv32i_cpu_waveform.vcd");
         $dumpvars(0, tb_cpu_top);
